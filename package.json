@@ -1,0 +1,33 @@
+{
+  "name": "roman_numerals",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "enzyme-adapter-react-15": "^1.0.5",
+    "react": "^16.3.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.3.0",
+    "react-scripts": "1.1.1",
+    "styled-components": "^3.2.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./src/tests/setup.js"
+    ]
+  }
+}
