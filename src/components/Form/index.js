@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import CalculateValue from '../../utils/CalculateValue';
 
 export default class Form extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {rValue: '', iValue:0};
+      this.state = {rValue: '', iValue:0, hasError: false};
 
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidCatch(error, info) {
+      this.setState({ hasError: true });
+      // log the error to an error reporting service
+      console.log('Error', error, info);
     }
 
     handleChange(event) {
@@ -21,6 +26,9 @@ export default class Form extends React.Component {
     }
 
     render() {
+      if (this.state.hasError) {
+        return <h1>Something went wrong.</h1>;
+      }
       return (
         <div >
             <form onSubmit={this.handleSubmit}>
